@@ -1,0 +1,111 @@
+  <style>
+    h1 {text-align: center ;}
+  @media only screen and (max-width: 400px) {
+
+.body {
+height: 100%;
+width: 100%;
+}
+}
+  .wrapper{
+      width: 100px;
+
+      margin: 0 auto;
+  }
+  .menu-button{
+      background-color: #fdc12a;
+      color: black;
+      padding: 15px;
+      font-size: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-style: bold;
+      cursor: pointer;
+      border: 7px solid #fff;
+      
+  }
+  .content {
+      display: flex;
+      margin: 82px auto 32px;
+      padding: 0 16px;
+      max-width: 1180px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+  .right-menu{
+      position: relative;
+      display: inline-block;
+      left: 0;
+  }
+  .drop-down-menu{
+      display: none;
+      position: absolute;
+      background-color: #FEE23E;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+  .drop-down-menu a:hover{
+      background-color: #000;
+      color: #ff9d00;
+  }
+  .right-menu:hover .drop-down-menu{
+      display: block;
+  }
+  .right-menu:hover .menu-button{
+      background-color: transparent;
+  }
+  .fcc-btn {
+    background-color: #fdc12a;
+    color:#000;
+    text-decoration: none;
+    margin: 8px 4px;
+    width: 50%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  </style>
+  <nav *ngIf="isLoggedIn()" class="toolbar" role="banner" style="background-color : #FEE23E; text-align: center; background-image:url(https://i.pinimg.com/564x/a3/92/82/a39282f15e3701aeb512df5b200f3e6a.jpg)">
+    <img width="60" alt="UN Logo"src="data:image/png;base64,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"/>
+    <div class="container" style="background-color : #FEE23E; font-size: large;">Microgrid Power Portal</div><div class="container" style="color: #24292e;"style="background-color : #FEE23E;">Welcome! {{ userInfo?.info?.name }}!!</div>
+    <div class="container" style="background-color : #FEE23E;">E-mail: {{ userInfo?.info?.email }}</div>
+    <div class="container" style="background-color : #FEE23E;"><img src= "{{ userInfo?.info?.picture }}"></div>
+    <div class="container" style="align-items: right;" style="background-color : #FEE23E;">
+    <div class="wrapper">
+           <div class="right-menu">
+           <button class="menu-button">Menu</button>
+  
+                <div class="drop-down-menu" style="background-color : #FEE23E;">
+                     <div><a class="fcc-btn" href="https://console.firebase.google.com/project/oldispatch-of-microgrid/firestore/data/~2FMydata1~2F2023_02_26_h20" target="_blank">
+                     Database</a></div><br><br>
+                     <div><a class="fcc-btn" href="https://www.nrel.gov/index.html" target="_blank">About</a></div><br><br>
+                     <div><a class="fcc-btn" href="https://sdg-tracker.org/energy" target="_blank">UN SDG</a></div><br><br>
+                     <div><a class="fcc-btn" href="https://mnre.gov.in/solar/schemes" target="_blank">Schemes</a></div><br><br>
+                     <div><a class="fcc-btn" href="https://www.cesc.co.in/roofTopSolarGuide" target="_blank">Sell &nbsp;</a></div><br><br>
+                     <div><a class="fcc-btn" (click)="logout()">Logout</a></div>
+                </div> 
+           </div>
+      </div>
+    </div>
+  <div class="content" role="main">
+    <table bgcolor="#FEE23E">
+         <tr align="center">
+          <td><app-pie-chart></app-pie-chart></td>
+              <td align="center"style="background-color : #FEE23E"></td><h1 style="padding: 14px;  background-color : #FEE23E;">
+              <img width="500" alt="Working" src="https://grist.org/wp-content/uploads/2013/04/solar-panels-homepage.jpg"/><br>
+            PV IS ONLINE!!&nbsp;&nbsp;
+            <img width="100" alt="Working" src="https://www.clipartmax.com/png/middle/212-2121718_check-mark-computer-icons-customer-service-theme-clip-green-tick-icon-png.png"/></h1>
+            <td><app-bar-chart></app-bar-chart></td></tr>
+    </table>
+  </div>
+  </nav>
+  <router-outlet></router-outlet>
